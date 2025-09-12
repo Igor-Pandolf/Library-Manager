@@ -1,7 +1,7 @@
-package com.projetos.LibraryManager.LibraryManager.Livros;
+package com.projetos.LibraryManager.LibraryManager.Livros.Mappers;
 
-import com.projetos.LibraryManager.LibraryManager.Autores.AutorDTO;
-import com.projetos.LibraryManager.LibraryManager.Autores.AutorModel;
+import com.projetos.LibraryManager.LibraryManager.Livros.DTOs.LivroDTO;
+import com.projetos.LibraryManager.LibraryManager.Livros.Models.LivroModel;
 import org.springframework.stereotype.Component;
 
 @Component
