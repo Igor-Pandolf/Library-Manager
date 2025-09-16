@@ -1,5 +1,6 @@
 package com.projetos.LibraryManager.LibraryManager.Livros.DTOs;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.projetos.LibraryManager.LibraryManager.Autores.Models.AutorModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,10 @@ public class LivroDTO {
     private Long id;
     private String titulo;
     private String genero;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = "UTC")
     private Date ano;
+
     private AutorModel autor;
 
     public Long getId() {

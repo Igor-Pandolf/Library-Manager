@@ -1,5 +1,7 @@
 package com.projetos.LibraryManager.LibraryManager.Livros.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.projetos.LibraryManager.LibraryManager.Autores.Models.AutorModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,13 +24,13 @@ public class LivroModel {
 
     private String genero;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = "UTC")
     private Date ano;
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
+    @JsonBackReference
     private AutorModel autor;
-    //TODO: ta retornando o id, quero que retorne o nome
-
 
     public Long getId() {
         return id;

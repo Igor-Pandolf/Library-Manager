@@ -1,6 +1,7 @@
 package com.projetos.LibraryManager.LibraryManager.Autores.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.projetos.LibraryManager.LibraryManager.Livros.Models.LivroModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,7 @@ public class AutorModel {
 
     @OneToMany(mappedBy = "autor") // Vai pegar os livros que tem esse "autor"
     @JsonIgnore
+    @JsonManagedReference
     private List<LivroModel> livro;
 
     public Long getId() {
